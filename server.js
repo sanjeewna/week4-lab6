@@ -7,14 +7,14 @@ connectDB();
 
 // Import the controllers
 const {
-  getUser,
-  createUser,
-  getUsers,
-  deleteUser,
-  patchUser,
-  putUser,
+  getCar,
+  createCar,
+  getCars,
+  deleteCar,
+  patchCar,
+  putCar,
   
-} = require("./controllers/userControllers");
+} = require("./controllers/carControllers");
 
 // middleware
 app.use(express.json());
@@ -25,20 +25,20 @@ app.get("/", (req, res) => res.send("API Running!"));
 //Routes
 
 app.get("/", (req, res) => res.send("API Running!"));
-// GET a single user
-app.get("/api/users/:id", getUser);
-// DELETE a user
-app.delete("/api/users/:id", deleteUser);
-// Update user using PATCH
-app.patch("/api/users/:id", patchUser);
-// Update user using PUT
-app.put("/api/users/:id", putUser);
-// Add a new user
-app.post("/api/users", createUser);
-// GET all users
-app.get("/api/users", getUsers);
+// GET a single car
+app.get("/api/cars/:id", getCar);
+// DELETE a car
+app.delete("/api/cars/:id", deleteCar);
+// Update car using PATCH
+app.patch("/api/cars/:id", patchCar);
+// Update car using PUT
+app.put("/api/cars/:id", putCar);
+// Add a new car
+app.post("/api/cars", createCar);
+// GET all cars
+app.get("/api/cars", getCars);
 
-const PORT = 4000;
+const PORT = 3001;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
